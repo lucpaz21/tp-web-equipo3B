@@ -1,0 +1,34 @@
+﻿#navbarNav a {
+    color: #5c36c4;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+#navbarNav a:hover {
+    color: #ffc42d;
+}
+
+.container-fluid a {
+    /*color: blueviolet;*/
+    color: #5c36c4;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.container-fluid a:hover {
+    background-color: none !important;
+}
+
+.btn.btn-outline-success {
+    color: #5c36c4;
+    border-color: #5c36c4;
+}
+
+.btn.btn-outline-success:hover {
+    background-color: #5c36c4;
+    color: #fafafa
+}
+
+.form-control {
+    width: 300px;
+}

@@ -1,0 +1,85 @@
+﻿.row {
+    display: flex;
+    flex-direction: row; 
+    margin: 20px auto;
+    max-width: 600px;
+    border: 1px solid /*#eaeaea*/ none;
+    background-color: white;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.col {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #eaeaea;
+    width: 400px;
+    border-radius: 15px;
+    border-left: 3px dotted #eaeaea;
+    /*margin-left: -12px;*/
+}
+
+.btn.btn-primary {
+    width: 300px;
+    border: 1px solid #5c36c4;
+    background-color: transparent;
+    color: black;
+    font-weight: 500;
+}
+
+.btn.btn-primary:hover {
+    background-color: #5c36c4;
+    color: white;
+}
+
+.col-2 {
+    flex: 0 0 5%;
+    border: 1px solid none;
+    width: 135px;
+}
+
+.voucher-box {
+    flex: 0 0 auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    background-color: transparent; 
+}
+
+.voucher {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    background-color: #5c36c4;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voucher::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.voucher-text {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
