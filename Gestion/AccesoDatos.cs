@@ -45,6 +45,7 @@ namespace Gestion
             }
             catch (Exception ex)
             {
+                throw ex;
             }
 
         }

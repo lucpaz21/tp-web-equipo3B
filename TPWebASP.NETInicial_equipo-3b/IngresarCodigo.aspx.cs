@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
+using Gestion;
 
 namespace TPWebASP.NETInicial_equipo_3b
 {
@@ -11,12 +13,31 @@ namespace TPWebASP.NETInicial_equipo_3b
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnSiguiente_Click(object sender, EventArgs e)
         {
+            Gestion.GestionVoucher gestionVoucher = new GestionVoucher();
+   
+            
+            if (string.IsNullOrEmpty(txtCodigo.Text))
+            {
+                lblMensajeValidacion.Text = "Debes ingresar un código para continuar ";
+                return;
+            }
+            else {
+         
+                Vouchers voucher = new Vouchers();
+                voucher.CodVoucher = txtCodigo.Text;
 
+                if (!gestionVoucher.buscarVoucher(voucher))
+                {
+                    lblMensajeValidacion.Text = "El codigo de voucher no es valido";
+                    return;
+                }
+                Response.Redirect("CatalogoProductos.aspx", false);
+            }
         }
     }
 }
