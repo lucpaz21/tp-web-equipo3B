@@ -20,7 +20,7 @@
             <asp:Button Text="Aplicar código" CssClass="btn btn-primary" ID="btnSiguiente" OnClick="btnSiguiente_Click" runat="server" />
 
             <!--mensaje de validacion -->
-            <asp:Label ID="lblMensajeValidacion" runat="server"></asp:Label>
+            <asp:Label ID="lblMensajeValidacion" CssClass="mensaje-validacion" runat="server" style="color: red; text-align:center"></asp:Label>
         </div>
         <div class="col-2"></div>
 
