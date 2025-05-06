@@ -11,7 +11,7 @@ namespace Dominio
         private int _idImagen;
         private string _ImagenURL;
 
-        private Articulo _articulo;
+        private Articulo _Idarticulo;
 
         public Imagen() { }
 
@@ -19,13 +19,13 @@ namespace Dominio
         {
            _idImagen = id;
             _ImagenURL = url;
-            _articulo = articulo;
+            _Idarticulo = articulo;
         }
 
         public int IDImagen { get { return _idImagen;} set { _idImagen = value; } }
         public string ImagenURL {get { return _ImagenURL;} set { _ImagenURL = value; } }
 
-        public Articulo Articulo { get { return _articulo; } set { _articulo = value; } }
+        public Articulo Articulo { get { return _Idarticulo; } set { _Idarticulo = value; } }
 
         public override string ToString()
         {

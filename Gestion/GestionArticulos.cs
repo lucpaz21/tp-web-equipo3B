@@ -47,9 +47,13 @@ namespace Gestion
 
                     if (!(datos.Lector["Precio"] is DBNull))
                         aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.Imagen = new Imagen();
+                    aux.Imagen = new List<Imagen>();
                     if (!(datos.Lector["ImagenUrl"] is DBNull))
-                        aux.Imagen.ImagenURL = (string)datos.Lector["ImagenUrl"]; 
+                    {
+                        Imagen img = new Imagen();
+                        img.ImagenURL = (string)datos.Lector["ImagenUrl"];
+                        aux.Imagen.Add(img);
+                    }
 
                     lista.Add(aux);
                 }
@@ -74,7 +78,7 @@ namespace Gestion
             try
             {
                 datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) " + "VALUES ('" + articulo.codArticulo + "', '" + articulo.Nombre + "', '" + articulo.Descripcion + "', " +
-                articulo.Marca.Id + ", " + articulo.Categoria.Id + ", " + articulo.Precio + "); " + "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) " + "VALUES (SCOPE_IDENTITY(), '" + articulo.Imagen.ImagenURL + "')");
+                articulo.Marca.Id + ", " + articulo.Categoria.Id + ", " + articulo.Precio + "); " + "INSERT INTO IMAGENES (IdArticulo, ImagenUrl) " + "VALUES (SCOPE_IDENTITY(), '" + articulo.Imagen[0].ImagenURL + "')");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -101,7 +105,7 @@ namespace Gestion
                 datos.setearParametro("@IdMarca", articulo.Marca.Id);
                 datos.setearParametro("@IdCategoria", articulo.Categoria.Id);
                 datos.setearParametro("@Id", articulo.IDArticulo);
-                datos.setearParametro("@ImagenUrl", articulo.Imagen.ImagenURL);
+                datos.setearParametro("@ImagenUrl", articulo.Imagen[0].ImagenURL);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -216,10 +220,13 @@ namespace Gestion
 
                     if (!(datos.Lector["Precio"] is DBNull))
                         aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.Imagen = new Imagen();
+                    aux.Imagen = new List<Imagen>();
                     if (!(datos.Lector["ImagenUrl"] is DBNull))
-                        aux.Imagen.ImagenURL = (string)datos.Lector["ImagenUrl"];
-
+                    {
+                        Imagen img = new Imagen();
+                        img.ImagenURL = (string)datos.Lector["ImagenUrl"];
+                        aux.Imagen.Add(img);
+                    }
                     lista.Add(aux);
                 }
 
