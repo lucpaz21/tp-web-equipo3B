@@ -11,7 +11,7 @@ namespace TPWebASP.NETInicial_equipo_3b
 {
 
 
-    public partial class CatalogoProductos
+    public partial class WebForm1
     {
     }
 }

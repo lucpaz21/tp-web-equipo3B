@@ -1,0 +1,20 @@
+﻿.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 150px;
+    gap: 30px;
+}
+
+.btn.btn-primary {
+    background-color: #5c36c4;
+    color: white;
+    border: 1px solid #5c36c4;
+}
+
+.btn.btn-primary:hover {
+    background-color: #ffc600;
+    color: white;
+    border: 1px solid #ffc600;
+}
+
