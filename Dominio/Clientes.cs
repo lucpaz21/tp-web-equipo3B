@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Dominio
 {
-    internal class Clientes
+    public class Clientes
     {
         private int _ClienteId;
         private string _Documento;
         private string _NombreCliente;
         private string _ApellidoCliente;
+        private string _CorreoCliente;
         private string _Direccion;
         private string _Ciudad;
         private int _Cp;
@@ -26,6 +28,7 @@ namespace Dominio
         
         public string ApellidoCliente { get { return _ApellidoCliente; } set { _ApellidoCliente = value; } }
 
+        public string CorreoCliente { get { return _CorreoCliente; } set { _CorreoCliente = value; }}
         public string Direccion { get { return _Direccion; } set {_Direccion = value; }}
 
         public string Ciudad { get { return _Ciudad; }  set { _Ciudad = value; }}

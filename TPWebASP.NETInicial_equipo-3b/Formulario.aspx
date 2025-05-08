@@ -5,50 +5,54 @@
     <link href="~/Content/Formulario.css" rel="stylesheet" type="text/css" runat="server" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <%--DNI, NOMBRE, APELLIDO, EMAIL, DIRECCIÓN, CIUDAD, COD POSTAL--%>
+
+
     <link href="Content/Formulario.css" rel="stylesheet" type="text/css" />
     <div class="form-container">
         <h1>Ingrese sus datos</h1>
         <div class="form-group">
             <label for="dni">DNI</label>
-            <input type="text" id="dni" placeholder="Ingrese su DNI">
+            <asp:TextBox ID="dni" runat="server" placeholder="Ingrese su DNI" CssClass="form-control" />
         </div>
 
         <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Ingrese su nombre">
+            <asp:TextBox ID="nombre" runat="server" placeholder="Ingrese su nombre" CssClass="form-control" />
         </div>
 
         <div class="form-group">
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" placeholder="Ingrese su apellido">
+            <asp:TextBox ID="apellido" runat="server" placeholder="Ingrese su apellido" CssClass="form-control" />
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Ingrese su email">
+            <asp:TextBox ID="email" runat="server" placeholder="Ingrese su email" CssClass="form-control" />
         </div>
 
         <div class="form-group">
             <label for="direccion">Dirección</label>
-            <input type="text" id="direccion" placeholder="Ingrese su dirección">
+            <asp:TextBox ID="direccion" runat="server" placeholder="Ingrese su dirección" CssClass="form-control" />
         </div>
 
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label for="ciudad">Ciudad</label>
-                    <input type="text" id="ciudad" placeholder="Ingrese su ciudad">
+                    <asp:TextBox ID="ciudad" runat="server" placeholder="Ingrese su ciudad" CssClass="form-control" />
                 </div>
             </div>
 
             <div class="col">
                 <div class="form-group">
                     <label for="codigo-postal">Código Postal</label>
-                    <input type="text" id="codigo-postal" placeholder="Ingrese su código postal">
+                    <asp:TextBox ID="codigoPostal" runat="server" placeholder="Ingrese su código postal" CssClass="form-control" />
                 </div>
             </div>
         </div>
 
-        <button type="submit">Enviar</button>
+        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" OnClick="btnEnviar_Click" CssClass="btn btn-primary" />
+        <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
     </div>
 </asp:Content>

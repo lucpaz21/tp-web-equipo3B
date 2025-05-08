@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gestion
 {
-    internal class AccesoDatos
+    public class AccesoDatos
     {
         private const string ConnectionString = "server=.\\SQLEXPRESS; database=PROMOS_DB; integrated security=true;";
         private SqlConnection conexion;
