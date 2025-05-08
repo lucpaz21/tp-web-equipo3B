@@ -28,8 +28,7 @@ namespace TPWebASP.NETInicial_equipo_3b
                     if (listaArticulos.Count > 0)
                     {
                         Articulo art1 = listaArticulos[0];
-                        ImagenTarjeta1.ImageUrl = art1.Imagen[0]?.ImagenURL ?? "...";
-                        ImagenTarjeta1.AlternateText = art1.Nombre;
+                        ImagenCarousel1.ImageUrl = art1.Imagen[0].ImagenURL;
                         lblTitulo1.Text = art1.Nombre;
                         lblDescripcion1.Text = art1.Descripcion;
                     }
@@ -37,8 +36,7 @@ namespace TPWebASP.NETInicial_equipo_3b
                     if (listaArticulos.Count > 1)
                     {
                         Articulo art2 = listaArticulos[1];
-                        ImagenTarjeta2.ImageUrl = art2.Imagen[0]?.ImagenURL ?? "...";
-                        ImagenTarjeta2.AlternateText = art2.Nombre;
+                        ImagenCarousel2.ImageUrl = art2.Imagen[0].ImagenURL;
                         lblTitulo2.Text = art2.Nombre;
                         lblDescripcion2.Text = art2.Descripcion;
                     }
@@ -46,8 +44,7 @@ namespace TPWebASP.NETInicial_equipo_3b
                     if (listaArticulos.Count > 2)
                     {
                         Articulo art3 = listaArticulos[2];
-                        ImagenTarjeta3.ImageUrl = art3.Imagen[0]?.ImagenURL ?? "...";
-                        ImagenTarjeta3.AlternateText = art3.Nombre;
+                        ImagenCarousel3.ImageUrl = art3.Imagen[0].ImagenURL;
                         lblTitulo3.Text = art3.Nombre;
                         lblDescripcion3.Text = art3.Descripcion;
                     }

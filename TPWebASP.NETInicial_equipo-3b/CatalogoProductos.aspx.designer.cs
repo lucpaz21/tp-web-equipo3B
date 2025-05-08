@@ -15,13 +15,31 @@ namespace TPWebASP.NETInicial_equipo_3b
     {
 
         /// <summary>
-        /// ImagenTarjeta1 control.
+        /// ImagenCarousel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImagenTarjeta1;
+        protected global::System.Web.UI.WebControls.Image ImagenCarousel1;
+
+        /// <summary>
+        /// Imagen2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Imagen2;
+
+        /// <summary>
+        /// Imagen3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Imagen3;
 
         /// <summary>
         /// lblTitulo1 control.
@@ -42,13 +60,31 @@ namespace TPWebASP.NETInicial_equipo_3b
         protected global::System.Web.UI.WebControls.Label lblDescripcion1;
 
         /// <summary>
-        /// ImagenTarjeta2 control.
+        /// ImagenCarousel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImagenTarjeta2;
+        protected global::System.Web.UI.WebControls.Image ImagenCarousel2;
+
+        /// <summary>
+        /// Image2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image2;
+
+        /// <summary>
+        /// Image3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image3;
 
         /// <summary>
         /// lblTitulo2 control.
@@ -69,13 +105,31 @@ namespace TPWebASP.NETInicial_equipo_3b
         protected global::System.Web.UI.WebControls.Label lblDescripcion2;
 
         /// <summary>
-        /// ImagenTarjeta3 control.
+        /// ImagenCarousel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImagenTarjeta3;
+        protected global::System.Web.UI.WebControls.Image ImagenCarousel3;
+
+        /// <summary>
+        /// Image5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image5;
+
+        /// <summary>
+        /// Image6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image6;
 
         /// <summary>
         /// lblTitulo3 control.

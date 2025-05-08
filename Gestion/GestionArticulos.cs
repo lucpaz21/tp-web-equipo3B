@@ -38,9 +38,9 @@ namespace Gestion
 
                     if (existente == null)
                     {
-                        Articulo aux = new Articulo(); //Lo empezamos a cargar con los datos del lector de ese registro
-                    //aux.IDArticulo = lector.GetInt32(0); 
-                    aux.IDArticulo = (int)datos.Lector["Id"]; //Lo mismo que la linea de arriba
+                        Articulo aux = new Articulo();
+                        //aux.IDArticulo = lector.GetInt32(0); 
+                        aux.IDArticulo = (int)datos.Lector["Id"]; //Lo mismo que la linea de arriba
                     if (!(datos.Lector["Codigo"] is DBNull))
                         aux.codArticulo = (string)datos.Lector["Codigo"];
                     if (!(datos.Lector["Nombre"] is DBNull))
@@ -71,6 +71,7 @@ namespace Gestion
 
                     lista.Add(aux);
                 }
+
                     else
                     {
                         if (!(datos.Lector["ImagenUrl"] is DBNull))
@@ -80,6 +81,7 @@ namespace Gestion
                             existente.Imagen.Add(img);
                         }
                     }
+
                 }
 
                 return lista;
