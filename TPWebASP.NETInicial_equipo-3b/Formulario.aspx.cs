@@ -43,6 +43,7 @@ namespace TPWebASP.NETInicial_equipo_3b
                 }
                 else
                 {
+
                     datos.setearConsulta("INSERT INTO Clientes (Documento, NombreCliente, ApellidoCliente, CorreoCliente, Direccion, Ciudad, Cp) " +
                                          "VALUES (@Documento, @NombreCliente, @ApellidoCliente, @CorreoCliente, @Direccion, @Ciudad, @Cp)");
 
