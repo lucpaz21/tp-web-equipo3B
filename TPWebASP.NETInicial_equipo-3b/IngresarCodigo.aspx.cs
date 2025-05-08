@@ -19,6 +19,7 @@ namespace TPWebASP.NETInicial_equipo_3b
         protected void btnSiguiente_Click(object sender, EventArgs e)
         {
             Gestion.GestionVoucher gestionVoucher = new GestionVoucher();
+            
    
             
             if (string.IsNullOrEmpty(txtCodigo.Text))
@@ -33,10 +34,22 @@ namespace TPWebASP.NETInicial_equipo_3b
 
                 if (!gestionVoucher.buscarVoucher(voucher))
                 {
-                    lblMensajeValidacion.Text = "El codigo de voucher no es valido";
+                    lblMensajeValidacion.Text = "El codigo de voucher no es válido";
                     return;
                 }
-                Response.Redirect("CatalogoProductos.aspx", false);
+                else
+                {
+                    if(gestionVoucher.voucherUtilizado(voucher))
+                    {
+                        lblMensajeValidacion.Text = "El codigo de voucher ya fue utilizado";
+                        return;
+                    }
+                    else
+                    {
+                        Response.Redirect("CatalogoProductos.aspx", false);
+                    }
+                }
+                    
             }
         }
     }

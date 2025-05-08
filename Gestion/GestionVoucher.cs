@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,6 +41,36 @@ namespace Gestion
             {
                 datos.cerrarConexion();
             }
+            return true;
+        }
+
+        public bool voucherUtilizado(Vouchers vouchers)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT IdCliente, FechaCanje, IdArticulo from Vouchers where CodigoVoucher = @CodigoVoucher");
+                datos.setearParametro("@CodigoVoucher", vouchers.CodVoucher);
+                
+
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read() && (datos.Lector.IsDBNull(0) || datos.Lector.IsDBNull(1) || datos.Lector.IsDBNull(2)))
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
             return true;
         }
     }
