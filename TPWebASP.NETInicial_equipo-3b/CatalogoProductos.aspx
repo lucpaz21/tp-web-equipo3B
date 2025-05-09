@@ -30,7 +30,7 @@
             <div class="card-body">
                 <h5 class="card-title"><asp:Label ID="lblTitulo1" runat="server" Text="Titulo Tarjeta"></asp:Label></h5>
                 <p class="card-text"><asp:Label ID="lblDescripcion1" runat="server" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></asp:Label></p>
-                <a href="Formulario.aspx" class="btn btn-primary">Lo quiero</a>
+                <asp:Button ID="btnLoQuiero1" CssClass="btn btn-primary" runat="server" Text="¡Lo quiero!" OnClick="btnLoQuiero1_Click" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -58,7 +58,7 @@
             <div class="card-body">
                 <h5 class="card-title"><asp:Label ID="lblTitulo2" runat="server" Text="Titulo Tarjeta"></asp:Label></h5>
                 <p class="card-text"><asp:Label ID="lblDescripcion2" runat="server" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></asp:Label></p>
-                <a href="Formulario.aspx" class="btn btn-primary">Lo quiero</a>
+                <asp:Button ID="btnLoQuiero2" CssClass="btn btn-primary" runat="server" Text="¡Lo quiero!" OnClick="btnLoQuiero2_Click" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -86,7 +86,7 @@
             <div class="card-body">
                 <h5 class="card-title"><asp:Label ID="lblTitulo3" runat="server" Text="Titulo Tarjeta"></asp:Label></h5>
                 <p class="card-text"><asp:Label ID="lblDescripcion3" runat="server" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></asp:Label></p>
-                <a href="Formulario.aspx" class="btn btn-primary">¡Lo quiero!</a>
+                <asp:Button ID="btnLoQuiero3" CssClass="btn btn-primary" runat="server" Text="¡Lo quiero!" OnClick="btnLoQuiero3_Click" />
             </div>
         </div>
     </div>

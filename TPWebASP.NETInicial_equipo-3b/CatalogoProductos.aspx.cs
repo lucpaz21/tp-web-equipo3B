@@ -51,5 +51,20 @@ namespace TPWebASP.NETInicial_equipo_3b
                 }
             }
         }
+
+        protected void btnLoQuiero1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Formulario.aspx", false);
+        }
+
+        protected void btnLoQuiero2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Formulario.aspx", false);
+        }
+
+        protected void btnLoQuiero3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Formulario.aspx", false);
+        }
     }
 }
