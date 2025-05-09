@@ -53,6 +53,7 @@
         </div>
 
         <asp:Button ID="btnEnviar" runat="server" Text="Enviar" OnClick="btnEnviar_Click" CssClass="btn btn-primary" />
-        <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+        <asp:Label ID="lblMensajeDNIencontrado" runat="server" ForeColor="Red"></asp:Label>
+        <asp:Label ID="lblMensajeDNINuevo" runat="server" ForeColor="Green"></asp:Label>
     </div>
 </asp:Content>

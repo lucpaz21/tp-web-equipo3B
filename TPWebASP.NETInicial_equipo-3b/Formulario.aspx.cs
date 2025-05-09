@@ -39,12 +39,14 @@ namespace TPWebASP.NETInicial_equipo_3b
                 if (datos.Lector.Read())
                 {
                     string encontrado = datos.Lector["Documento"].ToString();
-                    lblMensaje.Text = "El documento ya está registrado: " + encontrado;
+                    lblMensajeDNIencontrado.Text = "El documento ya está registrado: " + encontrado;
                 }
                 else
                 {
+                    datos.cerrarConexion();
+                    datos.limpiarParametros();
 
-                    datos.setearConsulta("INSERT INTO Clientes (Documento, NombreCliente, ApellidoCliente, CorreoCliente, Direccion, Ciudad, Cp) " +
+                    datos.setearConsulta("INSERT INTO Clientes (Documento, Nombre, Apellido, Email, Direccion, Ciudad, CP) " +
                                          "VALUES (@Documento, @NombreCliente, @ApellidoCliente, @CorreoCliente, @Direccion, @Ciudad, @Cp)");
 
                     datos.setearParametro("@Documento", cliente.Documento);
@@ -56,7 +58,7 @@ namespace TPWebASP.NETInicial_equipo_3b
                     datos.setearParametro("@Cp", cliente.Cp);
 
                     datos.ejecutarAccion();
-                    Response.Write("Cliente registrado exitosamente.");
+                    lblMensajeDNINuevo.Text = "Cliente registrado exitosamente.";
                 }
             }
             catch (Exception ex)

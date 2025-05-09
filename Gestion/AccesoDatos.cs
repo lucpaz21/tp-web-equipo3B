@@ -69,7 +69,13 @@ namespace Gestion
         {
             comando.Parameters.AddWithValue(nombre, valor);
         }
-
+        public void limpiarParametros()
+        {
+            if (comando != null)
+            {
+                comando.Parameters.Clear();
+            }
+        }
         public void cerrarConexion()
         {
             if (lector != null)
