@@ -42,6 +42,15 @@ namespace TPWebASP.NETInicial_equipo_3b
         protected global::System.Web.UI.WebControls.TextBox nombre;
 
         /// <summary>
+        /// lblNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombre;
+
+        /// <summary>
         /// apellido control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace TPWebASP.NETInicial_equipo_3b
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox apellido;
+
+        /// <summary>
+        /// lblApellido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblApellido;
 
         /// <summary>
         /// email control.
@@ -60,6 +78,15 @@ namespace TPWebASP.NETInicial_equipo_3b
         protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
+        /// lblEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEmail;
+
+        /// <summary>
         /// direccion control.
         /// </summary>
         /// <remarks>
@@ -67,6 +94,15 @@ namespace TPWebASP.NETInicial_equipo_3b
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox direccion;
+
+        /// <summary>
+        /// lblDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDireccion;
 
         /// <summary>
         /// ciudad control.
@@ -78,6 +114,15 @@ namespace TPWebASP.NETInicial_equipo_3b
         protected global::System.Web.UI.WebControls.TextBox ciudad;
 
         /// <summary>
+        /// lblCiudad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCiudad;
+
+        /// <summary>
         /// codigoPostal control.
         /// </summary>
         /// <remarks>
@@ -85,6 +130,15 @@ namespace TPWebASP.NETInicial_equipo_3b
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox codigoPostal;
+
+        /// <summary>
+        /// lblCp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCp;
 
         /// <summary>
         /// btnEnviar control.
