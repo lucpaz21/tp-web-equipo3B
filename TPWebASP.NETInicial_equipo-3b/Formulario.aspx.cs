@@ -43,7 +43,8 @@ namespace TPWebASP.NETInicial_equipo_3b
                 if (datos.Lector.Read())
                 {
                     string encontrado = datos.Lector["Documento"].ToString();
-                    lblMensajeDNINuevo.Text = "";
+
+
                     lblMensajeDNIencontrado.Text = "El documento ya está registrado: " + encontrado;
                     dniText.Text = "";
                     nombre.Text = "";
@@ -52,6 +53,9 @@ namespace TPWebASP.NETInicial_equipo_3b
                     direccion.Text = "";
                     ciudad.Text = "";
                     codigoPostal.Text = "";
+
+                    lblMensajeDNINuevo.Text = "";
+
                 }
                 else
                 {

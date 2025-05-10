@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/Formulario.css" rel="stylesheet" type="text/css" runat="server" />
+    <script src="scripts/Formulario.js" defer></script>
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%--DNI, NOMBRE, APELLIDO, EMAIL, DIRECCIÓN, CIUDAD, COD POSTAL--%>
 
@@ -13,7 +16,8 @@
         <h1>Ingrese sus datos</h1>
         <div class="form-group">
             <label for="dni">DNI</label>
-            <asp:TextBox ID="dniText" AutoPostBack="true" runat="server" placeholder="Ingrese su DNI" CssClass="form-control" OnTextChanged="dniText_TextChanged" />
+            <asp:TextBox ID="dniText" onClickClient="validarFormulario()" AutoPostBack="true" runat="server" placeholder="Ingrese su DNI" CssClass="form-control" OnTextChanged="dniText_TextChanged" />
+            <asp:Label ID="lbldni" runat="server" ForeColor="Red"></asp:Label>
         </div>
 
         <div class="form-group">
@@ -52,7 +56,8 @@
             </div>
         </div>
 
-        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" OnClick="btnEnviar_Click" CssClass="btn btn-primary" />
+        <asp:Button ID="btnEnviar" runat="server" Text="Participar"
+            OnClick="btnEnviar_Click" CssClass="btn btn-primary" />
         <asp:Label ID="lblMensajeDNIencontrado" runat="server" ForeColor="Red"></asp:Label>
         <asp:Label ID="lblMensajeDNINuevo" runat="server" ForeColor="Green"></asp:Label>
     </div>
