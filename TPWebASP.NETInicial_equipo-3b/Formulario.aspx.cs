@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,7 +15,10 @@ namespace TPWebASP.NETInicial_equipo_3b
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack)
+            {
+                lblMensajeDNIencontrado.Text = "";
+            }
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
@@ -22,7 +26,7 @@ namespace TPWebASP.NETInicial_equipo_3b
             Gestion.AccesoDatos datos = new AccesoDatos();
 
             Clientes cliente = new Clientes();
-            cliente.Documento = dni.Text;
+            cliente.Documento = dniText.Text;
             cliente.NombreCliente = nombre.Text;
             cliente.ApellidoCliente = apellido.Text;
             cliente.CorreoCliente = email.Text;
@@ -39,7 +43,15 @@ namespace TPWebASP.NETInicial_equipo_3b
                 if (datos.Lector.Read())
                 {
                     string encontrado = datos.Lector["Documento"].ToString();
+                    lblMensajeDNINuevo.Text = "";
                     lblMensajeDNIencontrado.Text = "El documento ya está registrado: " + encontrado;
+                    dniText.Text = "";
+                    nombre.Text = "";
+                    apellido.Text = "";
+                    email.Text = "";
+                    direccion.Text = "";
+                    ciudad.Text = "";
+                    codigoPostal.Text = "";
                 }
                 else
                 {
@@ -58,7 +70,15 @@ namespace TPWebASP.NETInicial_equipo_3b
                     datos.setearParametro("@Cp", cliente.Cp);
 
                     datos.ejecutarAccion();
+                    lblMensajeDNIencontrado.Text = "";
                     lblMensajeDNINuevo.Text = "Cliente registrado exitosamente.";
+                    dniText.Text = "";
+                    nombre.Text = "";
+                    apellido.Text = "";
+                    email.Text = "";
+                    direccion.Text = "";
+                    ciudad.Text = "";
+                    codigoPostal.Text = "";
                 }
             }
             catch (Exception ex)
@@ -71,7 +91,36 @@ namespace TPWebASP.NETInicial_equipo_3b
             }
         }
 
+        protected void dniText_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(dniText.Text)) { return; }
+
+                Gestion.AccesoDatos datos = new Gestion.AccesoDatos();
+
+                datos.setearConsulta("SELECT Nombre, Apellido, Email, Direccion, Ciudad, CP FROM Clientes WHERE Documento = @Documento");
+                datos.setearParametro("@Documento", dniText.Text);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    nombre.Text = datos.Lector["Nombre"].ToString();
+                    apellido.Text = datos.Lector["Apellido"].ToString();
+                    email.Text = datos.Lector["Email"].ToString();
+                    direccion.Text = datos.Lector["Direccion"].ToString();
+                    ciudad.Text = datos.Lector["Ciudad"].ToString();
+                    codigoPostal.Text = datos.Lector["CP"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Error: " + ex.Message);
+            }
+        }
     }
+
 }
 
 

@@ -13,7 +13,7 @@
         <h1>Ingrese sus datos</h1>
         <div class="form-group">
             <label for="dni">DNI</label>
-            <asp:TextBox ID="dni" runat="server" placeholder="Ingrese su DNI" CssClass="form-control" />
+            <asp:TextBox ID="dniText" AutoPostBack="true" runat="server" placeholder="Ingrese su DNI" CssClass="form-control" OnTextChanged="dniText_TextChanged" />
         </div>
 
         <div class="form-group">

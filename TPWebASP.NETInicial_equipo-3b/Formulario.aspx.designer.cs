@@ -15,13 +15,13 @@ namespace TPWebASP.NETInicial_equipo_3b
     {
 
         /// <summary>
-        /// dni control.
+        /// dniText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dni;
+        protected global::System.Web.UI.WebControls.TextBox dniText;
 
         /// <summary>
         /// nombre control.
