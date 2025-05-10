@@ -1,0 +1,70 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.FondoPantalla {
+    background-image: url('Imagen gadgets.png');
+    background-size: cover;
+    min-height: 92.4vh;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+.FondoPantalla::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 0;
+}
+
+    .FondoPantalla h1 {
+        font-family: "Playfair Display", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 6rem;
+        text-align: center;
+        z-index: 2;
+        padding-bottom: 3rem;
+        color: white;
+    }
+
+    .FondoPantalla h2 {
+        font-family: "Playfair Display", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 2rem;
+        text-align: center;
+        z-index: 2;
+        padding-bottom: 3rem;
+        color: white;
+    }
+
+.CanjeVoucher {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 3rem;
+    text-align: center;
+    z-index: 2;
+    padding-bottom: 3rem;
+    color: #ffc42d;
+    text-decoration: none;
+}
+
+    .CanjeVoucher:hover {
+        color: #5c36c4;
+    }
+
+.container {
+    padding: 0 !important;
+    max-width: 100% !important;
+}

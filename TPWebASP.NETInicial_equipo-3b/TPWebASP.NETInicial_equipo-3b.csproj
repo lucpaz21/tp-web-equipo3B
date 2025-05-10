@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="CatalogoProductos.aspx" />
     <Content Include="Content\Catalogo.css" />
+    <Content Include="Content\Default.css" />
     <Content Include="Content\Formulario.css" />
     <Content Include="Content\IngresoCodigo.css" />
     <Content Include="Content\Navbar.css" />
