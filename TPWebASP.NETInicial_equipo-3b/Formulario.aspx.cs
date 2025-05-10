@@ -40,7 +40,7 @@ namespace TPWebASP.NETInicial_equipo_3b
 
             try
             {
-                datos.setearConsulta("SELECT Documento FROM Clientes WHERE Documento = @Documento");
+                datos.setearConsulta("SELECT Id, Documento FROM Clientes WHERE Documento = @Documento");
                 datos.setearParametro("@Documento", cliente.Documento);
                 datos.ejecutarLectura();
 
@@ -85,20 +85,35 @@ namespace TPWebASP.NETInicial_equipo_3b
                     ciudad.Text = "";
                     codigoPostal.Text = "";
 
-                    
+                    datos.cerrarConexion();
+                    datos.limpiarParametros();
+
+                    datos.setearConsulta("SELECT Id FROM Clientes WHERE Documento = @Documento");
+                    datos.setearParametro("@Documento", cliente.Documento);
+                    datos.ejecutarLectura();
+
+                    if (datos.Lector.Read())
+                    {
+                        cliente.ClienteId = (int)datos.Lector["Id"];
+                    }
+
                 }
 
-                voucher.CodVoucher = Session["CodVoucher"].ToString();
-                articulo.IDArticulo = (int)Session["ArticuloElegido"];
-
-                if(!string.IsNullOrEmpty(voucher.CodVoucher) && articulo.IDArticulo!=0 && cliente.ClienteId != 0)
+                if (Session["CodVoucher"]!= null && Session["ArticuloElegido"] != null) 
                 {
-                    bool formularioEnviado = gestionVoucher.insertarDatosenVouchers(articulo, voucher, cliente);
+                    voucher.CodVoucher = Session["CodVoucher"].ToString();
+                    articulo.IDArticulo = (int)Session["ArticuloElegido"];
 
-                    if (formularioEnviado)
+                    if (!string.IsNullOrEmpty(voucher.CodVoucher) && articulo.IDArticulo != 0 && cliente.ClienteId != 0)
                     {
-                        Response.Redirect("Default.aspx", false);
+                        bool formularioEnviado = gestionVoucher.insertarDatosenVouchers(articulo, voucher, cliente);
+
+                        if (formularioEnviado)
+                        {
+                            Response.Redirect("Default.aspx", false);
+                        }
                     }
+
                 }
 
 
