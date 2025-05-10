@@ -24,6 +24,10 @@ namespace TPWebASP.NETInicial_equipo_3b
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             Gestion.AccesoDatos datos = new AccesoDatos();
+            GestionVoucher gestionVoucher = new GestionVoucher();
+            Articulo articulo = new Articulo();
+            Vouchers voucher = new Vouchers();
+            
 
             Clientes cliente = new Clientes();
             cliente.Documento = dniText.Text;
@@ -36,15 +40,15 @@ namespace TPWebASP.NETInicial_equipo_3b
 
             try
             {
-                datos.setearConsulta("SELECT Documento FROM Clientes WHERE Documento = @Documento");
+                datos.setearConsulta("SELECT Id, Documento FROM Clientes WHERE Documento = @Documento");
                 datos.setearParametro("@Documento", cliente.Documento);
                 datos.ejecutarLectura();
 
                 if (datos.Lector.Read())
-                {
+                { 
                     string encontrado = datos.Lector["Documento"].ToString();
-
-
+                    cliente.ClienteId = (int)datos.Lector["Id"];
+                    lblMensajeDNINuevo.Text = "";
                     lblMensajeDNIencontrado.Text = "El documento ya está registrado: " + encontrado;
                     dniText.Text = "";
                     nombre.Text = "";
@@ -83,7 +87,39 @@ namespace TPWebASP.NETInicial_equipo_3b
                     direccion.Text = "";
                     ciudad.Text = "";
                     codigoPostal.Text = "";
+
+                    datos.cerrarConexion();
+                    datos.limpiarParametros();
+
+                    datos.setearConsulta("SELECT Id FROM Clientes WHERE Documento = @Documento");
+                    datos.setearParametro("@Documento", cliente.Documento);
+                    datos.ejecutarLectura();
+
+                    if (datos.Lector.Read())
+                    {
+                        cliente.ClienteId = (int)datos.Lector["Id"];
+                    }
+
                 }
+
+                if (Session["CodVoucher"]!= null && Session["ArticuloElegido"] != null) 
+                {
+                    voucher.CodVoucher = Session["CodVoucher"].ToString();
+                    articulo.IDArticulo = (int)Session["ArticuloElegido"];
+
+                    if (!string.IsNullOrEmpty(voucher.CodVoucher) && articulo.IDArticulo != 0 && cliente.ClienteId != 0)
+                    {
+                        bool formularioEnviado = gestionVoucher.insertarDatosenVouchers(articulo, voucher, cliente);
+
+                        if (formularioEnviado)
+                        {
+                            Response.Redirect("Default.aspx", false);
+                        }
+                    }
+
+                }
+
+
             }
             catch (Exception ex)
             {

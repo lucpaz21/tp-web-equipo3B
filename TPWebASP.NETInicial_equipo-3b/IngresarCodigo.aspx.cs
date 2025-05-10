@@ -46,6 +46,7 @@ namespace TPWebASP.NETInicial_equipo_3b
                     }
                     else
                     {
+                        Session.Add("CodVoucher", voucher.CodVoucher);
                         Response.Redirect("CatalogoProductos.aspx", false);
                     }
                 }
