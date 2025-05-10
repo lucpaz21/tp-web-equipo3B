@@ -64,73 +64,36 @@ namespace TPWebASP.NETInicial_equipo_3b
 
         protected void btnLoQuiero1_Click(object sender, EventArgs e)
         {
-            
-            Articulo articulo = new Articulo();
-            Vouchers voucher = new Vouchers();
-            GestionVoucher gestionVoucher = new GestionVoucher();
 
             if (Session["IdArticulo1"] != null) 
             {
-                articulo.IDArticulo = (int)Session["IdArticulo1"];
+                Session["ArticuloElegido"] = Session["IdArticulo1"];
+                Response.Redirect("Formulario.aspx", false);
+
+            }
+
             
-            }
-
-            if (Session["CodVoucher"] != null)
-            {
-                voucher.CodVoucher = Session["CodVoucher"].ToString();
-
-                if (gestionVoucher.insertarIdArticuloenVouchers(articulo, voucher))
-                {
-                    Response.Redirect("Formulario.aspx", false);
-                }
-            }
             
         }
 
         protected void btnLoQuiero2_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new Articulo();
-            Vouchers voucher = new Vouchers();
-            GestionVoucher gestionVoucher = new GestionVoucher();
-
             if (Session["IdArticulo2"] != null)
             {
-                articulo.IDArticulo = (int)Session["IdArticulo2"];
+                Session["ArticuloElegido"] = Session["IdArticulo2"];
+                Response.Redirect("Formulario.aspx", false);
 
-            }
-
-            if (Session["CodVoucher"] != null)
-            {
-                voucher.CodVoucher = Session["CodVoucher"].ToString();
-
-                if (gestionVoucher.insertarIdArticuloenVouchers(articulo, voucher))
-                {
-                    Response.Redirect("Formulario.aspx", false);
-                }
             }
 
         }
 
         protected void btnLoQuiero3_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new Articulo();
-            Vouchers voucher = new Vouchers();
-            GestionVoucher gestionVoucher = new GestionVoucher();
-
             if (Session["IdArticulo3"] != null)
             {
-                articulo.IDArticulo = (int)Session["IdArticulo3"];
+                Session["ArticuloElegido"] = Session["IdArticulo3"];
+                Response.Redirect("Formulario.aspx", false);
 
-            }
-
-            if (Session["CodVoucher"] != null)
-            {
-                voucher.CodVoucher = Session["CodVoucher"].ToString();
-
-                if (gestionVoucher.insertarIdArticuloenVouchers(articulo, voucher))
-                {
-                    Response.Redirect("Formulario.aspx", false);
-                }
             }
         }
     }

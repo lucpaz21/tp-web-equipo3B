@@ -74,15 +74,16 @@ namespace Gestion
             return true;
         }
 
-        public bool insertarIdArticuloenVouchers(Articulo articulo, Vouchers voucher)
+        public bool insertarDatosenVouchers(Articulo articulo, Vouchers voucher, Clientes cliente)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("UPDATE VOUCHERS SET IdArticulo=@IdArticulo WHERE CodigoVoucher=@CodigoVoucher");
+                datos.setearConsulta("UPDATE VOUCHERS SET IdArticulo=@IdArticulo, IdCliente= @IdCliente, FechaCanje= getdate() WHERE CodigoVoucher=@CodigoVoucher");
                 datos.setearParametro("@CodigoVoucher", voucher.CodVoucher);
                 datos.setearParametro("@IdArticulo", articulo.IDArticulo);
+                datos.setearParametro("@IdCliente",cliente.ClienteId);
                 datos.ejecutarAccion();
 
                 return true;

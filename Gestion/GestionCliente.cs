@@ -18,15 +18,19 @@ namespace Gestion
 
             try
             {
-                datos.setearConsulta("SELECT Id, Documento, Nombre, Apellido, Email, Direccion, Ciudad, CP from CLIENTES where Documento= @Documento");
+                datos.setearConsulta("SELECT Id, Documento from CLIENTES where Documento= @Documento");
                 datos.setearParametro("@Documento", cliente.Documento);
 
                 datos.ejecutarLectura();
 
                 if (!datos.Lector.Read())
-                {
-                    Console.WriteLine("El cliente no se encuentra registrado");
+                { 
                     return false;
+                }
+                else
+                {
+                    cliente.ClienteId = (int)datos.Lector["Id"];
+                    return true;
                 }
             }
             catch (Exception ex)
@@ -38,7 +42,6 @@ namespace Gestion
             {
                 datos.cerrarConexion();
             }
-            return true;
 
         }
     }
