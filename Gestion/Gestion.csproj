@@ -49,6 +49,7 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="GestionArticulos.cs" />
     <Compile Include="GestionCategoria.cs" />
+    <Compile Include="GestionCliente.cs" />
     <Compile Include="GestionImagen.cs" />
     <Compile Include="GestionMarca.cs" />
     <Compile Include="GestionVoucher.cs" />

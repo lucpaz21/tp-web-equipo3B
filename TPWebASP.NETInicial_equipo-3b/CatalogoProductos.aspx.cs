@@ -12,6 +12,8 @@ namespace TPWebASP.NETInicial_equipo_3b
 {
     public partial class CatalogoProductos : System.Web.UI.Page
     {
+
+        public string codvoucher {  get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -31,6 +33,8 @@ namespace TPWebASP.NETInicial_equipo_3b
                         ImagenCarousel1.ImageUrl = art1.Imagen[0].ImagenURL;
                         lblTitulo1.Text = art1.Nombre;
                         lblDescripcion1.Text = art1.Descripcion;
+
+                        Session.Add("IdArticulo1", art1.IDArticulo);
                     }
 
                     if (listaArticulos.Count > 1)
@@ -39,6 +43,8 @@ namespace TPWebASP.NETInicial_equipo_3b
                         ImagenCarousel2.ImageUrl = art2.Imagen[0].ImagenURL;
                         lblTitulo2.Text = art2.Nombre;
                         lblDescripcion2.Text = art2.Descripcion;
+
+                        Session.Add("IdArticulo2", art2.IDArticulo);
                     }
 
                     if (listaArticulos.Count > 2)
@@ -47,24 +53,85 @@ namespace TPWebASP.NETInicial_equipo_3b
                         ImagenCarousel3.ImageUrl = art3.Imagen[0].ImagenURL;
                         lblTitulo3.Text = art3.Nombre;
                         lblDescripcion3.Text = art3.Descripcion;
+
+                        Session.Add("IdArticulo3", art3.IDArticulo);
                     }
                 }
             }
+
+            codvoucher = Session["CodVoucher"] != null ? Session["CodVoucher"].ToString() : "";
         }
 
         protected void btnLoQuiero1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Formulario.aspx", false);
+            
+            Articulo articulo = new Articulo();
+            Vouchers voucher = new Vouchers();
+            GestionVoucher gestionVoucher = new GestionVoucher();
+
+            if (Session["IdArticulo1"] != null) 
+            {
+                articulo.IDArticulo = (int)Session["IdArticulo1"];
+            
+            }
+
+            if (Session["CodVoucher"] != null)
+            {
+                voucher.CodVoucher = Session["CodVoucher"].ToString();
+
+                if (gestionVoucher.insertarIdArticuloenVouchers(articulo, voucher))
+                {
+                    Response.Redirect("Formulario.aspx", false);
+                }
+            }
+            
         }
 
         protected void btnLoQuiero2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Formulario.aspx", false);
+            Articulo articulo = new Articulo();
+            Vouchers voucher = new Vouchers();
+            GestionVoucher gestionVoucher = new GestionVoucher();
+
+            if (Session["IdArticulo2"] != null)
+            {
+                articulo.IDArticulo = (int)Session["IdArticulo2"];
+
+            }
+
+            if (Session["CodVoucher"] != null)
+            {
+                voucher.CodVoucher = Session["CodVoucher"].ToString();
+
+                if (gestionVoucher.insertarIdArticuloenVouchers(articulo, voucher))
+                {
+                    Response.Redirect("Formulario.aspx", false);
+                }
+            }
+
         }
 
         protected void btnLoQuiero3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Formulario.aspx", false);
+            Articulo articulo = new Articulo();
+            Vouchers voucher = new Vouchers();
+            GestionVoucher gestionVoucher = new GestionVoucher();
+
+            if (Session["IdArticulo3"] != null)
+            {
+                articulo.IDArticulo = (int)Session["IdArticulo3"];
+
+            }
+
+            if (Session["CodVoucher"] != null)
+            {
+                voucher.CodVoucher = Session["CodVoucher"].ToString();
+
+                if (gestionVoucher.insertarIdArticuloenVouchers(articulo, voucher))
+                {
+                    Response.Redirect("Formulario.aspx", false);
+                }
+            }
         }
     }
 }

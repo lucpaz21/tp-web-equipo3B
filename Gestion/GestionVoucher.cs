@@ -73,5 +73,32 @@ namespace Gestion
 
             return true;
         }
+
+        public bool insertarIdArticuloenVouchers(Articulo articulo, Vouchers voucher)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE VOUCHERS SET IdArticulo=@IdArticulo WHERE CodigoVoucher=@CodigoVoucher");
+                datos.setearParametro("@CodigoVoucher", voucher.CodVoucher);
+                datos.setearParametro("@IdArticulo", articulo.IDArticulo);
+                datos.ejecutarAccion();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+           
+        }
+
     }
 }
