@@ -71,6 +71,7 @@
     <Content Include="Content\IngresoCodigo.css" />
     <Content Include="Content\Navbar.css" />
     <Content Include="Default.aspx" />
+    <Content Include="FormularioEnviado.aspx" />
     <Content Include="IngresarCodigo.aspx" />
     <Content Include="Web.config" />
     <Content Include="Formulario.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioEnviado.aspx.cs">
+      <DependentUpon>FormularioEnviado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioEnviado.aspx.designer.cs">
+      <DependentUpon>FormularioEnviado.aspx</DependentUpon>
     </Compile>
     <Compile Include="IngresarCodigo.aspx.cs">
       <DependentUpon>IngresarCodigo.aspx</DependentUpon>

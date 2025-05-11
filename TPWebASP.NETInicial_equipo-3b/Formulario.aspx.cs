@@ -110,7 +110,7 @@ namespace TPWebASP.NETInicial_equipo_3b
 
                         if (formularioEnviado)
                         {
-                            Response.Redirect("Default.aspx", false);
+                            Response.Redirect("FormularioEnviado.aspx", false);
                         }
                     }
 
