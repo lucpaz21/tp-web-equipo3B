@@ -96,8 +96,10 @@ function validarFormulario() {
     const cpValido = validarNumeros('codigoPostal', 'lblCp');
 
     if (!dniValido || !nombreValido || !apellidoValido || !emailValido || !direccionValida || !ciudadValida || !cpValido ) {
+        event.preventDefault();
         return false;
     }
+
 
     return true;
 }

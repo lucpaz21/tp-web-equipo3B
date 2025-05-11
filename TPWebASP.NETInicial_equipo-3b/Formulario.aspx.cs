@@ -154,7 +154,7 @@ namespace TPWebASP.NETInicial_equipo_3b
 
             try
             {
-                if (string.IsNullOrWhiteSpace(dniText.Text)) { return; }
+                //if (string.IsNullOrWhiteSpace(dniText.Text)) { return; }
 
                 Gestion.AccesoDatos datos = new Gestion.AccesoDatos();
 
