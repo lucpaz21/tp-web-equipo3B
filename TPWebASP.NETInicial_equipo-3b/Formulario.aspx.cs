@@ -28,6 +28,7 @@ namespace TPWebASP.NETInicial_equipo_3b
             Articulo articulo = new Articulo();
             Vouchers voucher = new Vouchers();
             Clientes cliente = new Clientes();
+           /* EmailService emailService = new EmailService();*/
 
             int codigoPostalValor;
             if (!int.TryParse(codigoPostal.Text, out codigoPostalValor) || codigoPostalValor <= 0)
@@ -68,6 +69,18 @@ namespace TPWebASP.NETInicial_equipo_3b
                     cliente.ClienteId = (int)datos.Lector["Id"];
                     lblMensajeDNINuevo.Text = "";
                     lblMensajeDNIencontrado.Text = "El documento ya está registrado: " + encontrado;
+
+                   /* emailService.armarCorreo(cliente.CorreoCliente);
+
+                    try
+                    {
+                        emailService.enviarEmail();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Session.Add("error", ex);
+                    }*/
                     dniText.Text = "";
                     nombre.Text = "";
                     apellido.Text = "";
@@ -77,6 +90,7 @@ namespace TPWebASP.NETInicial_equipo_3b
                     codigoPostal.Text = "";
 
                     lblMensajeDNINuevo.Text = "";
+                    
 
                 }
                 else
@@ -123,7 +137,21 @@ namespace TPWebASP.NETInicial_equipo_3b
                 if (Session["CodVoucher"]!= null && Session["ArticuloElegido"] != null) 
                 {
                     voucher.CodVoucher = Session["CodVoucher"].ToString();
-                    articulo.IDArticulo = (int)Session["ArticuloElegido"];
+                    // articulo.IDArticulo = (int)Session["ArticuloElegido"];
+
+                    if (Session["ArticuloElegido"] != null)
+                    {
+                        int idArticulo;
+                        if (int.TryParse(Session["ArticuloElegido"].ToString(), out idArticulo))
+                        {
+                            articulo.IDArticulo = idArticulo;
+                        }
+                        else
+                        {
+                            throw new Exception("El valor de ArticuloElegido no es un número válido.");
+                        }
+                    }
+
 
                     if (!string.IsNullOrEmpty(voucher.CodVoucher) && articulo.IDArticulo != 0 && cliente.ClienteId != 0)
                     {
