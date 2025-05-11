@@ -5,90 +5,40 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="<%= ResolveUrl("~/Content/Catalogo.css") %>" rel="stylesheet" type="text/css" />
     <div class="contenedor">
+<asp:Repeater ID="repArticulos" runat="server">
+    <ItemTemplate>
         <div class="card" style="width: 18rem;">
-            <div id="Caurosel1" class="carousel slide">
-            <div class="carousel-inner">
+            <div id='Carousel<%# Eval("IDArticulo") %>' class="carousel slide">
+                <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <asp:Image ID="ImagenCarousel1" runat="server" class="card-img-top" alt="..." />
+                        <asp:Image ID="Imagen1" runat="server" ImageUrl='<%# Eval("Imagen[0].ImagenURL") %>' class="card-img-top" alt="primera imagen" />
                     </div>
                     <div class="carousel-item">
-                        <asp:Image ID="Imagen2" runat="server" class="card-img-top" alt="..." />
+                        <asp:Image ID="Imagen2" runat="server" ImageUrl='<%# Eval("Imagen[1].ImagenURL") %>' class="card-img-top" alt="segunda imagen" />
                     </div>
                     <div class="carousel-item">
-                        <asp:Image ID="Imagen3" runat="server" class="card-img-top" alt="..." />
+                        <asp:Image ID="Imagen3" runat="server" ImageUrl='<%# Eval("Imagen[2].ImagenURL") %>' class="card-img-top" alt="tercera imagen" />
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target='#Carousel<%# Eval("IdArticulo") %>' data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target='#Carousel<%# Eval("IdArticulo") %>' data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
             <div class="card-body">
-                <h5 class="card-title"><asp:Label ID="lblTitulo1" runat="server" Text="Titulo Tarjeta"></asp:Label></h5>
-                <p class="card-text"><asp:Label ID="lblDescripcion1" runat="server" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></asp:Label></p>
-                <asp:Button ID="btnLoQuiero1" CssClass="btn btn-primary" runat="server" Text="¡Lo quiero!" OnClick="btnLoQuiero1_Click" />
+                <h5 class="card-title"><%# Eval("Nombre") %></h5>
+                <p class="card-text"><%# Eval("Descripcion") %></p>
+                <asp:Button ID="btnLoQuiero3" CssClass="btn btn-primary" runat="server" Text="¡Lo quiero!" CommandArgument='<%# Eval("IdArticulo") %>' CommandName="SeleccionarArticulo" OnClick="btnLoQuiero_Click" />
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
-                  <div id="Caurosel2" class="carousel slide">
-            <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <asp:Image ID="ImagenCarousel2" runat="server" class="card-img-top" alt="..." />
-                    </div>
-                    <div class="carousel-item">
-                        <asp:Image ID="Image2" runat="server" class="card-img-top" alt="..." />
-                    </div>
-                    <div class="carousel-item">
-                        <asp:Image ID="Image3" runat="server" class="card-img-top" alt="..." />
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title"><asp:Label ID="lblTitulo2" runat="server" Text="Titulo Tarjeta"></asp:Label></h5>
-                <p class="card-text"><asp:Label ID="lblDescripcion2" runat="server" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></asp:Label></p>
-                <asp:Button ID="btnLoQuiero2" CssClass="btn btn-primary" runat="server" Text="¡Lo quiero!" OnClick="btnLoQuiero2_Click" />
-            </div>
+        
+    </ItemTemplate>
+</asp:Repeater>
         </div>
-        <div class="card" style="width: 18rem;">
-              <div id="Caurosel3" class="carousel slide">
-            <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <asp:Image ID="ImagenCarousel3" runat="server" class="card-img-top" alt="..." />
-                    </div>
-                    <div class="carousel-item">
-                        <asp:Image ID="Image5" runat="server" class="card-img-top" alt="..." />
-                    </div>
-                    <div class="carousel-item">
-                        <asp:Image ID="Image6" runat="server" class="card-img-top" alt="..." />
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title"><asp:Label ID="lblTitulo3" runat="server" Text="Titulo Tarjeta"></asp:Label></h5>
-                <p class="card-text"><asp:Label ID="lblDescripcion3" runat="server" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></asp:Label></p>
-                <asp:Button ID="btnLoQuiero3" CssClass="btn btn-primary" runat="server" Text="¡Lo quiero!" OnClick="btnLoQuiero3_Click" />
-            </div>
-        </div>
-    </div>
     <asp:GridView runat="server" ID="dvgArticulos"></asp:GridView>
 </asp:Content>
+
