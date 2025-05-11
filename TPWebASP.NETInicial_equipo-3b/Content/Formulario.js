@@ -1,16 +1,16 @@
 ﻿
 window.onload = function () {
-    const dniText = document.getElementById("<%= dniText.ClientID %>");
+    const dniText = document.getElementById("dniText");
     if (dniText) {
         dniText.addEventListener("keyup", validarNumeros);
     }
-};
+}
 
 function validarNumeros() {
-    const dni = document.getElementById("<%= dniText.ClientID %>").value;
-    const cp = document.getElementById("<%=codigoPostal.ClientID %>").value;
-    const mensajeDNI = document.getElementById("<%= lbldni.ClientID %>");
-    const mensajeCP = document.getElementById("<%= lblCp.ClientID %>");
+    const dni = document.getElementById("dniText").value;
+    const cp = document.getElementById("codigoPostal").value;
+    const mensajeDNI = document.getElementById("lbldni");
+    const mensajeCP = document.getElementById("lblCp");
 
 
     if (dni.trim() === "" || !/^\d+$/.test(dni)) {
@@ -33,12 +33,12 @@ function validarNumeros() {
 }
 
 function validarLetras() {
-    const nombre = document.getElementById("<%= nombre.ClientID %>").value;
-    const apellido = document.getElementById("<%= apellido.ClientID %>").value;
-    const ciudad = document.getElementById("<%= ciudad.ClientID %>").value;
-    const mensajeNombre = document.getElementById("<%= lblNombre.ClientID %>");
-    const mensajeApellido = document.getElementById("<%= lblApellido.ClientID %>");
-    const mensajeCiudad = document.getElementById("<%= lblCiudad.ClientID %>")
+    const nombre = document.getElementById("nombre").value;
+    const apellido = document.getElementById("apellido").value;
+    const ciudad = document.getElementById("ciudad").value;
+    const mensajeNombre = document.getElementById("lblNombre");
+    const mensajeApellido = document.getElementById("lblApellido");
+    const mensajeCiudad = document.getElementById("lblCiudad")
 
     let esValido = true;
 
@@ -72,15 +72,23 @@ function validarLetras() {
 
 
 function validarCamposVacios() {
-    const direccion = document.getElementById("<%= direccion.ClientID %>").value;
-    const mensajeDireccion = document.getElementById("<%=lblDireccion.ClientID %>");
+    const direccion = document.getElementById("direccion").value;
+    const mensajeDireccion = document.getElementById("lblDireccion");
 
     if (direccion === "") {
         mensajeDireccion.textContent = "Este campo no debe estar vacío";
+        return false;
     }
+    return true;
 }
 
+function validarFormulario() {
+    const numerosValidos = validarNumeros();
+    const letrasValidas = validarLetras();
+    validarCamposVacios();
 
+    return numerosValidos && letrasValidas;
+}
 
 
 

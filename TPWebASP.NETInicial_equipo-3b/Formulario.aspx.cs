@@ -27,16 +27,34 @@ namespace TPWebASP.NETInicial_equipo_3b
             GestionVoucher gestionVoucher = new GestionVoucher();
             Articulo articulo = new Articulo();
             Vouchers voucher = new Vouchers();
-            
-
             Clientes cliente = new Clientes();
+
+            int codigoPostalValor;
+            if (!int.TryParse(codigoPostal.Text, out codigoPostalValor) || codigoPostalValor <= 0)
+            {
+                lblMensajeDNINuevo.Text = "Por favor, ingresa un código postal válido.";
+                return;  
+            }
+
             cliente.Documento = dniText.Text;
             cliente.NombreCliente = nombre.Text;
             cliente.ApellidoCliente = apellido.Text;
             cliente.CorreoCliente = email.Text;
             cliente.Direccion = direccion.Text;
             cliente.Ciudad = ciudad.Text;
-            cliente.Cp = int.Parse(codigoPostal.Text);
+            cliente.Cp = codigoPostalValor;
+
+            if (string.IsNullOrWhiteSpace(cliente.Documento) ||
+                string.IsNullOrWhiteSpace(cliente.NombreCliente) ||
+                string.IsNullOrWhiteSpace(cliente.ApellidoCliente) ||
+                string.IsNullOrWhiteSpace(cliente.CorreoCliente) ||
+                string.IsNullOrWhiteSpace(cliente.Direccion) ||
+                string.IsNullOrWhiteSpace(cliente.Ciudad))
+            {
+                lblMensajeDNIencontrado.Text = "";
+                lblMensajeDNINuevo.Text = "Por favor, complete todos los campos obligatorios correctamente.";
+                return;
+            }
 
             try
             {
