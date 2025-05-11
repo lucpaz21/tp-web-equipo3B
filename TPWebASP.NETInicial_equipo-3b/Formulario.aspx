@@ -37,14 +37,14 @@
         <div class="form-group">
             <label for="email">Email</label>
             <asp:TextBox ID="email" runat="server" ClientIDMode="Static" placeholder="Ingrese su email" 
-                CssClass="form-control" onkeyup="validarEmail(email, lblEmail);" />
+                CssClass="form-control" onkeyup="validarEmail('email', 'lblEmail');" />
             <asp:Label ID="lblEmail" runat="server" ClientIDMode="Static" ForeColor="Red"></asp:Label>
         </div>
 
         <div class="form-group">
             <label for="direccion">Dirección</label>
             <asp:TextBox ID="direccion" runat="server" ClientIDMode="Static" placeholder="Ingrese su dirección" 
-                CssClass="form-control" onkeyup="validarCamposVacios(direccion, lblDireccion)" />
+                CssClass="form-control" onkeyup="validarCamposVacios('direccion', 'lblDireccion')" />
             <asp:Label ID="lblDireccion" runat="server" ClientIDMode="Static" ForeColor="Red"></asp:Label>
         </div>
 
@@ -69,7 +69,7 @@
         </div>
 
         <asp:Button ID="btnEnviar" runat="server" ClientIDMode="Static" Text="Participar"
-            OnClick="btnEnviar_Click" CssClass="btn btn-primary" />
+            OnClick="btnEnviar_Click" CssClass="btn btn-primary" OnClientClick="return validarFormulario();" />
 
         <asp:Label ID="lblMensajeDNIencontrado" runat="server" ForeColor="Red"></asp:Label>
         <asp:Label ID="lblMensajeDNINuevo" OnClientClick="return validarFormulario();" runat="server" ForeColor="Green"></asp:Label>
