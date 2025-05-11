@@ -35,38 +35,51 @@ namespace TPWebASP.NETInicial_equipo_3b
             codvoucher = Session["CodVoucher"] != null ? Session["CodVoucher"].ToString() : "";
         }
 
-        protected void btnLoQuiero1_Click(object sender, EventArgs e)
-        {
+        //protected void btnLoQuiero1_Click(object sender, EventArgs e)
+        //{
 
-            if (Session["IdArticulo1"] != null) 
-            {
-                Session["ArticuloElegido"] = Session["IdArticulo1"];
-                Response.Redirect("Formulario.aspx", false);
+        //    if (Session["IdArticulo1"] != null) 
+        //    {
+        //        Session["ArticuloElegido"] = Session["IdArticulo1"];
+        //        Response.Redirect("Formulario.aspx", false);
 
-            }
+        //    }
 
             
             
-        }
+        //}
 
-        protected void btnLoQuiero2_Click(object sender, EventArgs e)
+        //protected void btnLoQuiero2_Click(object sender, EventArgs e)
+        //{
+        //    if (Session["IdArticulo2"] != null)
+        //    {
+        //        Session["ArticuloElegido"] = Session["IdArticulo2"];
+        //        Response.Redirect("Formulario.aspx", false);
+
+        //    }
+
+        //}
+
+        //protected void btnLoQuiero3_Click(object sender, EventArgs e)
+        //{
+        //    if (Session["IdArticulo3"] != null)
+        //    {
+        //        Session["ArticuloElegido"] = Session["IdArticulo3"];
+        //        Response.Redirect("Formulario.aspx", false);
+
+        //    }
+        //}
+
+        protected void btnLoQuiero_Click(object sender, EventArgs e)
         {
-            if (Session["IdArticulo2"] != null)
+
+            string id = ((Button)sender).CommandArgument;
+
+            if (id != null)
             {
-                Session["ArticuloElegido"] = Session["IdArticulo2"];
+
+                Session["ArticuloElegido"] = id;
                 Response.Redirect("Formulario.aspx", false);
-
-            }
-
-        }
-
-        protected void btnLoQuiero3_Click(object sender, EventArgs e)
-        {
-            if (Session["IdArticulo3"] != null)
-            {
-                Session["ArticuloElegido"] = Session["IdArticulo3"];
-                Response.Redirect("Formulario.aspx", false);
-
             }
         }
     }

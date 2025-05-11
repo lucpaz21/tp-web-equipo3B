@@ -32,7 +32,7 @@
             <div class="card-body">
                 <h5 class="card-title"><%# Eval("Nombre") %></h5>
                 <p class="card-text"><%# Eval("Descripcion") %></p>
-                <asp:Button ID="btnLoQuiero3" CssClass="btn btn-primary" runat="server" Text="¡Lo quiero!" CommandArgument='<%# Eval("IdArticulo") %>' CommandName="SeleccionarArticulo" OnClick="btnLoQuiero3_Click" />
+                <asp:Button ID="btnLoQuiero3" CssClass="btn btn-primary" runat="server" Text="¡Lo quiero!" CommandArgument='<%# Eval("IdArticulo") %>' CommandName="SeleccionarArticulo" OnClick="btnLoQuiero_Click" />
             </div>
         </div>
         
