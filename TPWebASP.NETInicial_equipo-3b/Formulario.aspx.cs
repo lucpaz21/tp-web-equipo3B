@@ -57,6 +57,9 @@ namespace TPWebASP.NETInicial_equipo_3b
                     direccion.Text = "";
                     ciudad.Text = "";
                     codigoPostal.Text = "";
+
+                    lblMensajeDNINuevo.Text = "";
+
                 }
                 else
                 {
