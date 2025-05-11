@@ -24,38 +24,11 @@ namespace TPWebASP.NETInicial_equipo_3b
 
                 List<Articulo> listaArticulos = gestion.listar();
 
-                if (listaArticulos.Count > 0)
+                if (listaArticulos != null && listaArticulos.Count > 0)
                 {
+                    repArticulos.DataSource = listaArticulos;
+                    repArticulos.DataBind();
 
-                    if (listaArticulos.Count > 0)
-                    {
-                        Articulo art1 = listaArticulos[0];
-                        ImagenCarousel1.ImageUrl = art1.Imagen[0].ImagenURL;
-                        lblTitulo1.Text = art1.Nombre;
-                        lblDescripcion1.Text = art1.Descripcion;
-
-                        Session.Add("IdArticulo1", art1.IDArticulo);
-                    }
-
-                    if (listaArticulos.Count > 1)
-                    {
-                        Articulo art2 = listaArticulos[1];
-                        ImagenCarousel2.ImageUrl = art2.Imagen[0].ImagenURL;
-                        lblTitulo2.Text = art2.Nombre;
-                        lblDescripcion2.Text = art2.Descripcion;
-
-                        Session.Add("IdArticulo2", art2.IDArticulo);
-                    }
-
-                    if (listaArticulos.Count > 2)
-                    {
-                        Articulo art3 = listaArticulos[2];
-                        ImagenCarousel3.ImageUrl = art3.Imagen[0].ImagenURL;
-                        lblTitulo3.Text = art3.Nombre;
-                        lblDescripcion3.Text = art3.Descripcion;
-
-                        Session.Add("IdArticulo3", art3.IDArticulo);
-                    }
                 }
             }
 
