@@ -4,6 +4,7 @@
     justify-content: center;
     margin-top: 100px;
     gap: 30px;
+    border: 1px solid red;
 }
 
 .btn.btn-primary {
@@ -21,4 +22,3 @@
 .card-body{
     padding: 2rem;
 }
-

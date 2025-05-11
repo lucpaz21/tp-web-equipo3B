@@ -85,6 +85,12 @@ function validarCamposVacios(idCampo, idMensaje) {
     return true;
 }
 
+function mostrarMensaje(idMensaje) {
+    const mensaje = document.getElementById(idMensaje);
+
+    mensaje.textContent = "Complete correctamente los datos del formulario";
+}
+
 
 function validarFormulario() {
     const dniValido = validarNumeros('dniText', 'lbldni', 8);
@@ -97,6 +103,7 @@ function validarFormulario() {
 
     if (!dniValido || !nombreValido || !apellidoValido || !emailValido || !direccionValida || !ciudadValida || !cpValido ) {
         event.preventDefault();
+        mostrarMensaje("lblFormJS");
         return false;
     }
 

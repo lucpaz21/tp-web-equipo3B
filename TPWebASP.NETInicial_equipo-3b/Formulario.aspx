@@ -69,12 +69,12 @@
         </div>
 
         <asp:Button ID="btnEnviar" runat="server" ClientIDMode="Static" Text="Participar"
-            OnClick="btnEnviar_Click" CssClass="btn btn-primary" OnClientClick="return validarFormulario();" />
+            OnClick="btnEnviar_Click" CssClass="btn btn-primary" OnClientClick="return validarFormulario() ? true : false;" />
 
         <asp:Label ID="lblMensajeDNIencontrado" runat="server" ForeColor="Red"></asp:Label>
         <asp:Label ID="lblMensajeDNINuevo" OnClientClick="return validarFormulario();" runat="server" ForeColor="Green"></asp:Label>
+        <asp:Label ID="lblFormJS" runat="server" ClientIDMode="Static" ForeColor="Red" OnClientClick="mostrarMensaje();" ></asp:Label>
     </div>
 
-    <%--<script src="Content/Formulario.js"></script>--%>
 </asp:Content>
 

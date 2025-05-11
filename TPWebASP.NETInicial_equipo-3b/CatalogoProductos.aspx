@@ -11,13 +11,13 @@
             <div id='Carousel<%# Eval("IDArticulo") %>' class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <asp:Image ID="Imagen1" runat="server" ImageUrl='<%# Eval("Imagen[0].ImagenURL") %>' class="card-img-top" alt="primera imagen" />
+                        <asp:Image ID="Imagen1" runat="server" ImageUrl='<%# Eval("Imagen[0].ImagenURL") %>' class="card-img-top" Width="300px" Height="350px" alt="primera imagen" />
                     </div>
                     <div class="carousel-item">
-                        <asp:Image ID="Imagen2" runat="server" ImageUrl='<%# Eval("Imagen[1].ImagenURL") %>' class="card-img-top" alt="segunda imagen" />
+                        <asp:Image ID="Imagen2" runat="server" ImageUrl='<%# Eval("Imagen[1].ImagenURL") %>' class="card-img-top" Width="300px" Height="350px" alt="segunda imagen" />
                     </div>
                     <div class="carousel-item">
-                        <asp:Image ID="Imagen3" runat="server" ImageUrl='<%# Eval("Imagen[2].ImagenURL") %>' class="card-img-top" alt="tercera imagen" />
+                        <asp:Image ID="Imagen3" runat="server" ImageUrl='<%# Eval("Imagen[2].ImagenURL") %>' class="card-img-top" Width="300px" Height="350px" alt="tercera imagen" />
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target='#Carousel<%# Eval("IdArticulo") %>' data-bs-slide="prev">
