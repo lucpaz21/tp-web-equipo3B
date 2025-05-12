@@ -4,13 +4,13 @@
     justify-content: center;
     margin-top: 100px;
     gap: 30px;
-    border: 1px solid red;
 }
 
 .btn.btn-primary {
     background-color: #5c36c4;
     color: white;
     border: 1px solid #5c36c4;
+    margin-left: 3.7rem;
 }
 
 .btn.btn-primary:hover {
